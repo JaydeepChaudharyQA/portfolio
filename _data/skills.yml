@@ -29,7 +29,7 @@ groups:
   - title: Languages & Tools
     icon: code
     core: [TypeScript, Java]
-    items: [Node.js, Maven, VS Code, Eclipse, Jira, ClickUp, Windows, Linux]
+    items: [Node.js, Maven, Git, GitHub Actions, VS Code, Eclipse, Jira, ClickUp, Windows, Linux]
 
 testing_types: [End-to-end, Functional, Regression, Smoke, Sanity, Integration, System, Mobile, API, Load & Performance, Usability, Accessibility, UI/UX, Ad-hoc, UAT]
 

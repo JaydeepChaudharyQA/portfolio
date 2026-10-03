@@ -45,6 +45,25 @@ items:
     links:
       - { label: Product page, url: "https://www.kalelogistics.com/products/cargo-ground-handling-system", kind: info }
 
+  - title: OrangeHRM Automation Framework
+    type: Open source
+    org: Personal project · public on GitHub
+    category: Test automation framework
+    tags: [automation]
+    summary: >-
+      An end-to-end UI automation framework for the OrangeHRM HR application,
+      built with Java, Selenium WebDriver and TestNG on the Page Object Model.
+      21 automated tests cover login, dashboard, navigation, PIM and admin.
+    contribution: >-
+      Designed and built the whole framework: cross-browser driver factory,
+      explicit-wait synchronisation, JSON data-driven tests, Extent and TestNG
+      reports with failure screenshots, retry logic and GitHub Actions CI.
+    testing: [E2E automation, Regression, Smoke, Data-driven, Cross-browser]
+    tools: [Java, Selenium, TestNG, Maven, ExtentReports, GitHub Actions]
+    links:
+      - { label: GitHub repo, url: "https://github.com/JaydeepChaudharyQA/orangehrm-automation-framework", kind: repo }
+      - { label: Test runs,   url: "https://github.com/JaydeepChaudharyQA/orangehrm-automation-framework/actions", kind: live }
+
   - title: DLPP · Department of Lands & Physical Planning
     type: Professional
     org: Optimus Web Solution · Government of Papua New Guinea
