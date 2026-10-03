@@ -1,0 +1,164 @@
+# Projects. Order here = order on the page.
+#
+#  featured: true   → shown as the large case study at the top (use for one project)
+#  type             → Professional | Freelance
+#  tags             → used by the filter buttons (must match an id in "filters" below)
+#  links            → kind: live | app | repo | info   (repo = GitHub, shows the GitHub icon)
+
+filters:
+  - { id: all,         label: All }
+  - { id: automation,  label: Automation }
+  - { id: government,  label: Government }
+  - { id: hospitality, label: Hospitality & Travel }
+  - { id: health,      label: Health }
+  - { id: edtech,      label: EdTech }
+
+items:
+  - title: GALAXY · Cargo Ground Handling System
+    featured: true
+    type: Professional
+    org: Kale Logistics Solutions
+    category: Air cargo · Ground handling · Web & mobile
+    tags: [automation]
+    summary: >-
+      Kalé's terminal automation platform for cargo ground handlers. It
+      automates export, import and transshipment operations, with real-time
+      ULD and inventory tracking, flight build-up and breakdown, paperless
+      documents and billing, and is used by ground handlers such as Çelebi
+      (Istanbul) and Widerøe (Norway). I built its end-to-end automation
+      framework in Playwright + TypeScript.
+    contribution: >-
+      Designed the 4-layer framework and automated a complete import cargo
+      workflow (flight → ULD → AWB → warehouse delivery order) as 10 chained
+      scenarios, built to scale to 217+. I also automated the Android app with
+      Maestro and Appium.
+    layers:
+      - { name: Thin test specs,     detail: "readable scenarios, no selectors" }
+      - { name: Business workflows,  detail: "flight · ULD · AWB · delivery order" }
+      - { name: Page objects,        detail: "one class per screen, POM" }
+      - { name: Core utilities,      detail: "fixtures · session reuse · test data" }
+    metrics:
+      - { value: "10",   label: chained E2E scenarios }
+      - { value: "217+", label: scenarios planned }
+      - { value: "2",    label: "platforms: web & mobile" }
+    testing: [E2E automation, Regression, Data-driven, Mobile automation]
+    tools: [Playwright, TypeScript, Node.js, Maestro, Appium]
+    links:
+      - { label: Product page, url: "https://www.kalelogistics.com/products/cargo-ground-handling-system", kind: info }
+
+  - title: DLPP · Department of Lands & Physical Planning
+    type: Professional
+    org: Optimus Web Solution · Government of Papua New Guinea
+    category: Government · Land management
+    tags: [government, automation]
+    summary: >-
+      Papua New Guinea's national land-management platform: digital land
+      records, GIS mapping, land allocation, registration and planning.
+    contribution: >-
+      Manual, Selenium automation and load testing; API checks in Postman,
+      SQL data validation, RTM and client UAT demos.
+    testing: [Manual, Automation, Load, API, Regression, UAT]
+    tools: [Selenium, Java, TestNG, Postman, SQL]
+    links:
+      - { label: Live site, url: "https://dlpp.gov.pg/", kind: live }
+
+  - title: ICSA · Immigration & Citizenship Services Authority
+    type: Professional
+    org: Optimus Web Solution · Government of Papua New Guinea
+    category: Government · Immigration
+    tags: [government, automation]
+    summary: >-
+      Papua New Guinea's immigration portal: eVisa applications and status,
+      online fee payment, the Sponsor Portal for work permits, the Digital
+      Arrival Card and passport status checks.
+    contribution: >-
+      Manual, Selenium automation and load testing of public-facing services,
+      with regression on every release.
+    testing: [Manual, Automation, Load, Regression, Functional]
+    tools: [Selenium, Java, TestNG, Postman]
+    links:
+      - { label: Live site, url: "https://ica.gov.pg/", kind: live }
+
+  - title: ATS DHST
+    type: Freelance
+    org: International client
+    category: Health · Practice management SaaS
+    tags: [health]
+    summary: >-
+      Practice-management SaaS for physical therapists: scheduling, a 3D
+      anatomy model for pain tracking, client records, chat, payments and a
+      client booking portal.
+    contribution: >-
+      Owned QA end to end: scheduling, records and payment flows, API and
+      UI/UX checks, accessibility reviews and JMeter load testing.
+    testing: [E2E, Load (JMeter), API, Accessibility, Usability, Integration, UI/UX, Smoke, Ad-hoc]
+    tools: [JMeter, Postman]
+    links:
+      - { label: Live site, url: "https://atsdhst.com/home", kind: live }
+
+  - title: HoBo Stays
+    type: Freelance
+    org: Domestic client · India
+    category: Travel · Web & Android
+    tags: [hospitality]
+    summary: >-
+      A travel app for discovering hotels, Airbnbs and hostels through short
+      video reels, comparing prices across Booking.com, Agoda, Expedia and
+      more for 10,000+ properties.
+    contribution: >-
+      Tested the website, web app and Android app end to end: booking and
+      price-comparison flows, APIs, UI/UX and accessibility.
+    testing: [E2E, Mobile, API, Accessibility, Usability, Integration, UI/UX, Smoke, Ad-hoc]
+    tools: [Postman, Android]
+    links:
+      - { label: Website,    url: "https://hobostays.in/", kind: live }
+      - { label: Web app,    url: "https://app.hobostays.in/stays", kind: live }
+      - { label: Play Store, url: "https://play.google.com/store/apps/details?id=com.hobopmssorganization.hobostays&hl=en_IN", kind: app }
+
+  - title: Arcadia Hospitality
+    type: Freelance
+    org: International client · Irvine, California
+    category: Hospitality · AI workforce software
+    tags: [hospitality]
+    summary: >-
+      AI-powered hotel software automating workforce, front-desk,
+      housekeeping and guest-communication workflows on web and mobile.
+    contribution: >-
+      Tested web and mobile workflows and chatbot interactions end to end,
+      with API, integration and accessibility coverage.
+    testing: [E2E, API, Integration, Accessibility, Usability, UI/UX, Smoke, Ad-hoc]
+    tools: [Postman]
+    links:
+      - { label: Company, url: "https://www.linkedin.com/company/arcadiahospitality", kind: info }
+
+  - title: Zzzing Collection
+    type: Freelance
+    org: International client · Malta
+    category: Hospitality · Boutique stays
+    tags: [hospitality]
+    summary: >-
+      Boutique hotels and holiday rentals across Malta and Gozo, for tour
+      operators planning group stays and full-property takeovers.
+    contribution: >-
+      Tested property browsing and enquiry flows across devices, with
+      usability, accessibility and UI/UX checks.
+    testing: [E2E, Usability, Accessibility, UI/UX, Integration, Smoke, Ad-hoc]
+    links:
+      - { label: Live site, url: "https://zzzingcollection.lovable.app/", kind: live }
+
+  - title: Saarthi EdTech Suite
+    type: Professional
+    org: Saarthi Pedagogy Pvt. Ltd.
+    category: EdTech · 6 web & Android products
+    tags: [edtech, automation]
+    summary: >-
+      Six learning and school-management products: Publisher v2, Saarthi
+      Support, ClassRoom, Saarthi Schools, and the Student and Teacher
+      Android apps.
+    contribution: >-
+      Functional, regression and mobile testing across web and Android
+      releases, plus Selenium automation, API and JMeter performance tests.
+    testing: [Functional, Regression, Mobile, API, Performance, UAT]
+    tools: [Selenium, Java, TestNG, Postman, JMeter]
+    links:
+      - { label: Company, url: "https://in.linkedin.com/company/saarthi-pedagogy", kind: info }

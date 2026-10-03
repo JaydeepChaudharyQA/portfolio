@@ -1,0 +1,53 @@
+# Work history, newest first.
+# "highlights" are always shown; "more" sits behind a "Show more" toggle.
+
+- role: Software Tester
+  company: Kale Logistics Solutions Pvt. Ltd.
+  company_url: https://www.kalelogistics.com
+  start: Mar 2026
+  end: Present
+  current: true
+  context: GALAXY Cargo Ground Handling System (web & mobile) · team of 10
+  highlights:
+    - Built a Playwright (TypeScript) end-to-end suite for GALAXY, a cargo ground handling system used by ground handlers and terminal operators, automating a complete import cargo workflow (flight, ULD, AWB, warehouse delivery order) as 10 chained scenarios.
+    - Designed a four-layer automation architecture (core utilities, page objects, business workflows, thin specs) with fixtures and reusable login sessions, structured to scale to 217+ scenarios.
+    - Made automation stable on complex, dynamic UI elements such as autocomplete fields, page refreshes that reset form state, and secure login flows.
+    - Automated the GALAXY Android mobile app with Maestro and Appium (UiAutomator2), reducing flaky tests by switching to stable native locators.
+  more:
+    - Centralised test data in a single TypeScript module that generates valid runtime values (flight numbers, ULD IDs, airway bill numbers) for every run.
+    - Created and maintained Testsigma test cases, groups and suites for shipment management, and ran regular smoke suites.
+    - Logged and tracked mobile automation tool issues with clear, reproducible defect reports through to resolution.
+    - Validated APIs with Postman and backend data with SQL across export, import, ULD, warehouse and billing workflows.
+  tools: [Playwright, TypeScript, Maestro, Appium, Testsigma, Postman, SQL]
+
+- role: Senior QA Engineer
+  company: Optimus Web Solution
+  company_url: https://optimuswebsolution.co.in
+  start: Jan 2025
+  end: Mar 2026
+  context: Government platforms for Papua New Guinea (DLPP & ICSA) · team of 10
+  highlights:
+    - Tested national government platforms for land management (DLPP) and immigration & citizenship services (ICSA).
+    - Developed and maintained Selenium WebDriver (Java) and TestNG scripts to automate regression testing, and ran load tests on key user flows.
+    - Validated REST APIs in Postman (payloads, status codes, business rules) and verified data integrity across departmental systems with SQL.
+    - Reported status, risks and issues directly to the client in status calls and daily scrums; presented UAT demos and end-user walkthroughs for each release.
+  more:
+    - Prepared test scenarios, test cases and a Requirement Traceability Matrix (RTM) mapping business requirements to test coverage.
+    - Executed manual testing for core modules including Backlogs Wizard, PMS, Strata and Admin.
+  tools: [Selenium, Java, TestNG, Postman, SQL, Load testing, Jira]
+
+- role: Software Test Engineer (QA)
+  company: Saarthi Pedagogy Pvt. Ltd.
+  company_url: https://in.linkedin.com/company/saarthi-pedagogy
+  start: Nov 2022
+  end: Nov 2024
+  context: EdTech & school management products · team of 22
+  highlights:
+    - Tested 6 web and Android products, including Publisher v2, Saarthi Support, ClassRoom, Saarthi Schools and the Student and Teacher apps.
+    - Automated regression scenarios with Selenium WebDriver (Java) and TestNG.
+    - Ran functional, regression, smoke, sanity, integration, system and mobile testing across web and Android releases.
+    - Tested APIs with Postman and supported performance testing and result analysis with JMeter.
+  more:
+    - Managed the full defect lifecycle in ClickUp and Jira and validated backend data with SQL.
+    - Contributed to test planning and effort estimation in Agile sprints; prepared daily, weekly and monthly status reports and release test summaries.
+  tools: [Selenium, Java, TestNG, Postman, JMeter, ClickUp, Jira]

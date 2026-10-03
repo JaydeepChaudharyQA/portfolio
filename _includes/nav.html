@@ -1,0 +1,31 @@
+{%- assign p = site.data.profile -%}
+<header class="site-header" data-header>
+  <nav class="nav container" aria-label="Main">
+    <a class="brand" href="#top" aria-label="{{ p.name }}, back to top">
+      {% include logo.html %}
+      <span class="brand-name">{{ p.name }}</span>
+    </a>
+
+    <div class="nav-panel" id="nav-panel" data-nav-panel>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="{{ p.resume | relative_url }}" target="_blank" rel="noopener">
+        {% include icon.html name="download" %} Resume
+      </a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch colour theme">
+        {% include icon.html name="sun" class="i-sun" %}{% include icon.html name="moon" class="i-moon" %}
+      </button>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+        {% include icon.html name="menu" class="i-menu" %}{% include icon.html name="close" class="i-close" %}
+      </button>
+    </div>
+  </nav>
+</header>

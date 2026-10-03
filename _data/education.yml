@@ -1,0 +1,13 @@
+degrees:
+  - degree: Master of Computer Applications (MCA)
+    school: Jaipur National University
+    year: "2021"
+    score: "76%"
+  - degree: Bachelor of Computer Applications (BCA)
+    school: Saurashtra University
+    year: "2019"
+    score: "72%"
+
+certifications:
+  - name: Certified Software Tester
+    issuer: Cyber Success, Pune

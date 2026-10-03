@@ -1,0 +1,32 @@
+{%- assign ed = site.data.education -%}
+<section class="section section-tight" id="education" aria-labelledby="education-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span>06</span> Education</p>
+      <h2 id="education-title">Education &amp; certification</h2>
+    </header>
+
+    <ul class="edu-grid" role="list">
+      {%- for d in ed.degrees %}
+      <li class="card edu reveal">
+        <div class="edu-icon">{% include icon.html name="cap" %}</div>
+        <div>
+          <h3>{{ d.degree }}</h3>
+          <p>{{ d.school }}</p>
+          <p class="mono edu-meta">{{ d.year }}{% if d.score %} · {{ d.score }}{% endif %}</p>
+        </div>
+      </li>
+      {%- endfor %}
+      {%- for c in ed.certifications %}
+      <li class="card edu reveal">
+        <div class="edu-icon">{% include icon.html name="award" %}</div>
+        <div>
+          <h3>{{ c.name }}</h3>
+          <p>{{ c.issuer }}</p>
+          <p class="mono edu-meta">Certification</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

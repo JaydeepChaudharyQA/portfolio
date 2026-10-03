@@ -1,0 +1,16 @@
+{%- assign p = site.data.profile -%}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      {% include logo.html alt="JC logo" %}
+      <p class="mono">© {{ site.time | date: "%Y" }} {{ p.name }} · {{ p.role }}</p>
+    </div>
+    <ul class="footer-links" role="list">
+      {%- for s in p.social %}
+      <li><a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.name }}">{% include icon.html name=s.icon %}</a></li>
+      {%- endfor %}
+      <li><a href="mailto:{{ p.email }}" aria-label="Email">{% include icon.html name="mail" %}</a></li>
+      <li><a href="#top" class="mono back-top">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>

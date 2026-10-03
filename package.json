@@ -1,0 +1,14 @@
+{
+  "name": "jaydeep-portfolio",
+  "private": true,
+  "description": "Local preview tooling only. GitHub Pages builds the site with Jekyll.",
+  "type": "module",
+  "scripts": {
+    "preview": "node scripts/preview.mjs",
+    "build": "node scripts/preview.mjs --build-only"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "liquidjs": "^10.21.0"
+  }
+}

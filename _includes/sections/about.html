@@ -1,0 +1,35 @@
+{%- assign p = site.data.profile -%}
+{%- assign a = p.about -%}
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span>01</span> About</p>
+      <h2 id="about-title">{{ a.heading }}</h2>
+    </header>
+
+    <div class="about-grid">
+      <div class="about-main">
+        <div class="about-text reveal">
+          {%- for para in a.paragraphs %}
+          <p>{{ para }}</p>
+          {%- endfor %}
+        </div>
+
+        <div class="card now-card reveal" role="group" aria-labelledby="now-title">
+          <p class="card-label mono"><span class="run-dot" aria-hidden="true"></span><span id="now-title">{{ a.now.title }}</span></p>
+          <ul class="now-list" role="list">
+            {%- for item in a.now.items %}
+            <li>{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+
+      {%- if p.illustration %}
+      <figure class="about-art reveal">
+        <img src="{{ p.illustration | relative_url }}" alt="Illustration of two testers reviewing a QA checklist with a magnifying glass" width="427" height="417" loading="lazy" decoding="async">
+      </figure>
+      {%- endif %}
+    </div>
+  </div>
+</section>

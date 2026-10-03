@@ -1,0 +1,25 @@
+{%- assign pr = site.data.process -%}
+<section class="section" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span>02</span> Process</p>
+      <h2 id="process-title">{{ pr.heading }}</h2>
+      <p class="section-lede">{{ pr.lede }}</p>
+    </header>
+
+    <ol class="process" role="list">
+      {%- for step in pr.steps %}
+      <li class="process-step reveal" style="--i: {{ forloop.index0 }}">
+        <span class="process-num mono" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <div class="process-body">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.detail }}</p>
+          <ul class="process-outputs" role="list" aria-label="Deliverables">
+            {%- for o in step.outputs %}<li>{{ o }}</li>{% endfor %}
+          </ul>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

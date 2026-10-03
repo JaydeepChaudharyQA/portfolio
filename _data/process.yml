@@ -1,0 +1,27 @@
+# "How I test" section: the steps of my QA process, in order.
+
+heading: How I test
+lede: >-
+  A structured, end-to-end QA process I follow on every project, from the
+  first requirement to the release sign-off.
+
+steps:
+  - title: Analyse requirements
+    detail: Understand the business flows, user roles and risk areas, and clear up gaps in the acceptance criteria early.
+    outputs: [Test scenarios, Risk areas, Clarified requirements]
+
+  - title: Plan & design
+    detail: Write the test plan, design test cases and test data, and map every requirement to coverage.
+    outputs: [Test plan, Test cases, Test data, RTM]
+
+  - title: Execute & log defects
+    detail: Run functional, regression, API, mobile and exploratory testing, and log clear, reproducible defects.
+    outputs: [Execution results, Defect reports, Jira / ClickUp]
+
+  - title: Automate regression
+    detail: Turn stable, repeatable flows into automated suites so every release is checked quickly and consistently.
+    outputs: [Playwright, Selenium, Postman, JMeter]
+
+  - title: Report & sign-off
+    detail: Share daily and weekly status, present UAT demos and deliver the release test summary.
+    outputs: [DSR / WSR, UAT demo, Test summary report]

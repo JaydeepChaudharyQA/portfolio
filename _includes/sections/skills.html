@@ -1,0 +1,44 @@
+{%- assign sk = site.data.skills -%}
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span>05</span> Skills</p>
+      <h2 id="skills-title">My testing toolkit</h2>
+      <p class="section-lede">Highlighted items are the tools I use every day.</p>
+    </header>
+
+    <div class="skills-grid">
+      {%- for g in sk.groups %}
+      <article class="card skill-card reveal">
+        <div class="skill-icon">{% include icon.html name=g.icon %}</div>
+        <h3>{{ g.title }}</h3>
+        <ul class="chips" role="list">
+          {%- for s in g.core %}<li class="chip chip-strong">{{ s }}</li>{% endfor %}
+          {%- for s in g.items %}<li class="chip">{{ s }}</li>{% endfor %}
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+
+    <div class="skills-wide">
+      <article class="card reveal">
+        <h3 class="mini-title">Testing types</h3>
+        <ul class="chips" role="list">
+          {%- for s in sk.testing_types %}<li class="chip">{{ s }}</li>{% endfor %}
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3 class="mini-title">Process</h3>
+        <ul class="chips" role="list">
+          {%- for s in sk.process %}<li class="chip">{{ s }}</li>{% endfor %}
+        </ul>
+      </article>
+      <article class="card learning-card reveal">
+        <h3 class="mini-title"><span class="run-dot" aria-hidden="true"></span>Learning now</h3>
+        <ul class="now-list" role="list">
+          {%- for s in sk.learning %}<li>{{ s }}</li>{% endfor %}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

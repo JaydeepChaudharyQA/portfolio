@@ -1,0 +1,56 @@
+{%- assign p = site.data.profile -%}
+{%- capture page_url -%}{{ site.url }}{{ site.baseurl }}/{%- endcapture -%}
+{%- capture og_image -%}{{ site.url }}{{ site.baseurl }}/assets/img/og-image.jpg{%- endcapture -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description | strip | escape }}">
+<meta name="author" content="{{ p.name }}">
+<link rel="canonical" href="{{ page_url }}">
+<meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+
+<!-- Open Graph / social previews -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:description" content="{{ site.description | strip | escape }}">
+<meta property="og:url" content="{{ page_url }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
+<!-- Set theme before paint to avoid a flash -->
+<script>
+  (function () {
+    document.documentElement.classList.add('js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="preload" as="image" href="{{ p.photo | relative_url }}" type="image/webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ p.name | jsonify }},
+  "jobTitle": {{ p.role | jsonify }},
+  "url": {{ page_url | jsonify }},
+  "image": "{{ site.url }}{{ site.baseurl }}/{{ p.photo_fallback }}",
+  "email": "mailto:{{ p.email }}",
+  "address": { "@type": "PostalAddress", "addressLocality": "Rajkot", "addressRegion": "Gujarat", "addressCountry": "IN" },
+  "sameAs": [{% for s in p.social %}{{ s.url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+  "knowsAbout": ["Test Automation", "Playwright", "Selenium WebDriver", "Appium", "API Testing", "Performance Testing", "Quality Assurance"]
+}
+</script>

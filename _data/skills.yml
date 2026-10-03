@@ -1,0 +1,40 @@
+# Skill groups. "core" items are highlighted; "items" are shown normally.
+
+groups:
+  - title: Web UI Automation
+    icon: browser
+    core: [Playwright (TypeScript), Selenium WebDriver (Java)]
+    items: [TestNG]
+
+  - title: Mobile Automation
+    icon: phone
+    core: [Appium (UiAutomator2), Maestro]
+    items: [ADB, MEmu Emulator]
+
+  - title: API, Performance & Data
+    icon: api
+    core: [Postman (REST API), SQL]
+    items: [JMeter, DDL · DML · DCL · TCL]
+
+  - title: Framework Design
+    icon: layers
+    core: [Page Object Model, Layered architecture]
+    items: [Playwright fixtures, storageState auth, Data-driven testing]
+
+  - title: Low-code & AI-assisted
+    icon: spark
+    core: [Testsigma (Web & Mobile)]
+    items: [AI coding assistants, AI-assisted debugging & RCA]
+
+  - title: Languages & Tools
+    icon: code
+    core: [TypeScript, Java]
+    items: [Node.js, Maven, VS Code, Eclipse, Jira, ClickUp, Windows, Linux]
+
+testing_types: [End-to-end, Functional, Regression, Smoke, Sanity, Integration, System, Mobile, API, Load & Performance, Usability, Accessibility, UI/UX, Ad-hoc, UAT]
+
+process: [Agile / Scrum, STLC, SDLC, Defect lifecycle, RTM, Test planning & estimation, Test reporting]
+
+learning:
+  - CI/CD pipelines for automated test runs
+  - AI-assisted test generation with Playwright

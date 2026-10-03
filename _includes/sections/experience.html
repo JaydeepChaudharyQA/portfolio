@@ -1,0 +1,55 @@
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span>03</span> Experience</p>
+      <h2 id="experience-title">Where I've shipped quality</h2>
+    </header>
+
+    <ol class="timeline" role="list">
+      {%- for job in site.data.experience %}
+      <li class="timeline-item reveal{% if job.current %} is-current{% endif %}">
+        <div class="timeline-meta mono">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <time>{{ job.start }} — {{ job.end }}</time>
+          {%- if job.current %}<span class="badge badge-pass">Current</span>{% endif %}
+        </div>
+
+        <article class="card job">
+          <header class="job-head">
+            <h3>{{ job.role }}</h3>
+            <p class="job-company">
+              {%- if job.company_url -%}
+              <a href="{{ job.company_url }}" target="_blank" rel="noopener">{{ job.company }}</a>
+              {%- else -%}
+              {{ job.company }}
+              {%- endif -%}
+            </p>
+            <p class="job-context">{{ job.context }}</p>
+          </header>
+
+          <ul class="job-points">
+            {%- for h in job.highlights %}
+            <li>{{ h | escape }}</li>
+            {%- endfor %}
+          </ul>
+
+          {%- if job.more and job.more.size > 0 %}
+          <details class="job-more">
+            <summary class="mono"><span class="more-closed">Show {{ job.more.size }} more</span><span class="more-open">Show less</span></summary>
+            <ul class="job-points">
+              {%- for h in job.more %}
+              <li>{{ h | escape }}</li>
+              {%- endfor %}
+            </ul>
+          </details>
+          {%- endif %}
+
+          <ul class="chips" role="list" aria-label="Tools used">
+            {%- for t in job.tools %}<li class="chip">{{ t }}</li>{% endfor %}
+          </ul>
+        </article>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

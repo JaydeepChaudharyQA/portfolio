@@ -1,0 +1,69 @@
+# Personal info, hero, about and contact details.
+
+name: Jaydeep Chaudhary
+role: Manual & Automation QA Engineer
+role_secondary: SDET
+tagline: >-
+  I test web, mobile and APIs, hands-on and with reliable automation, so
+  teams can ship with confidence.
+availability: Open to Manual QA / QA Automation / SDET roles & freelance projects
+
+location: Rajkot, Gujarat, India
+work_mode: Open to remote work
+email: jaydeepdchaudhary@gmail.com
+languages: [English, Hindi]
+
+photo: assets/img/jaydeep-chaudhary.webp
+photo_fallback: assets/img/jaydeep-chaudhary.jpg
+illustration: assets/img/qa-illustration.svg
+resume: assets/resume/Jaydeep_Chaudhary_QA_Automation_Resume.pdf
+
+social:
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/jaydeepchaudharyqa
+    icon: linkedin
+  - name: GitHub
+    url: https://github.com/JaydeepChaudharyQA
+    icon: github
+
+# The animated "test run" card in the hero. Keep each line short.
+test_run:
+  command: npx playwright test --project=jaydeep
+  checks:
+    - "4+ years in QA & test automation"
+    - "15 web & mobile products tested"
+    - "5 domains: logistics · gov · EdTech · health · travel"
+    - "Playwright · Selenium · Appium · Postman · JMeter"
+  duration: "4.0s"
+
+# Numbers strip under the hero.
+stats:
+  - value: "4+"
+    unit: yrs
+    label: QA & automation experience
+  - value: "15"
+    label: Web & mobile products tested
+  - value: "5"
+    label: Industry domains
+
+about:
+  heading: Quality is a feature. I test like it.
+  paragraphs:
+    - >-
+      I'm a Manual & Automation QA Engineer with 4+ years of experience testing
+      web and mobile applications across logistics, government, EdTech and
+      hospitality. I write end-to-end UI automation with Playwright (TypeScript)
+      and Selenium WebDriver (Java), mobile automation with Appium and Maestro,
+      and API tests with Postman.
+    - >-
+      I care about frameworks that last: Page Object Model, layered
+      architecture, fixtures and centralised test data. I back that up with
+      strong manual testing, SQL data validation and clear documentation. I'm
+      comfortable in Agile/Scrum teams and with clients, from sprint planning
+      through UAT sign-off.
+  now:
+    title: Currently
+    items:
+      - Building a Playwright + TypeScript E2E framework for an air-cargo platform at Kale Logistics
+      - Expanding automation coverage with AI-assisted testing
+      - Learning and implementing CI/CD pipelines for automated test runs

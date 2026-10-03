@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────────
+#  Site settings (GitHub Pages builds this with Jekyll automatically)
+#  Content lives in _data/*.yml — see README.md for how to update.
+# ─────────────────────────────────────────────────────────────
+
+title: Jaydeep Chaudhary — Manual & Automation QA Engineer | SDET
+description: >-
+  Manual & Automation QA Engineer with 4+ years of experience testing web, mobile and
+  API products across logistics, government, EdTech and hospitality.
+  Playwright (TypeScript), Selenium (Java), Appium, Postman and JMeter.
+lang: en
+
+# Repo is "portfolio" under JaydeepChaudharyQA → https://jaydeepchaudharyqa.github.io/portfolio
+# If you rename the repo to jaydeepchaudharyqa.github.io, set baseurl to "".
+url: https://jaydeepchaudharyqa.github.io
+baseurl: /portfolio
+
+# Contact form
+#   provider: formsubmit → messages go to the email in _data/profile.yml. No account needed:
+#             the FIRST message sends you an activation email from FormSubmit; click the
+#             link once and every message after that arrives in your inbox.
+#   provider: formspree  → create a form at https://formspree.io and paste its ID below.
+#   provider: none       → hide the form (email / LinkedIn buttons still work).
+contact_form:
+  provider: formsubmit
+  formspree_id: ""
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - package.json
+  - package-lock.json
+  - node_modules
+  - scripts
+  - _preview

@@ -1,0 +1,116 @@
+{%- assign pr = site.data.projects -%}
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span>04</span> Projects</p>
+      <h2 id="projects-title">Products I've tested &amp; automated</h2>
+      <p class="section-lede">Professional and freelance work across government, logistics, health, hospitality and EdTech, for clients in India and abroad.</p>
+    </header>
+
+    {%- for item in pr.items %}{% if item.featured %}
+    <article class="card featured reveal" aria-labelledby="featured-title">
+      <div class="featured-copy">
+        <p class="project-meta mono">
+          <span class="badge badge-pass">Featured</span>
+          <span class="badge">{{ item.type }}</span>
+          <span>{{ item.category }}</span>
+        </p>
+        <h3 id="featured-title" class="featured-title">{{ item.title }}</h3>
+        <p class="project-org">{{ item.org }}</p>
+        <p>{{ item.summary }}</p>
+        <p class="project-role"><strong>My role:</strong> {{ item.contribution }}</p>
+
+        <dl class="featured-metrics">
+          {%- for m in item.metrics %}
+          <div><dt>{{ m.label }}</dt><dd>{{ m.value }}</dd></div>
+          {%- endfor %}
+        </dl>
+
+        <ul class="chips" role="list" aria-label="Tools">
+          {%- for t in item.tools %}<li class="chip chip-strong">{{ t }}</li>{% endfor %}
+        </ul>
+
+        {%- if item.links and item.links.size > 0 %}
+        <ul class="project-links featured-links" role="list">
+          {%- for l in item.links %}
+          {%- case l.kind -%}
+            {%- when "app" -%}{%- assign ic = "play" -%}
+            {%- when "repo" -%}{%- assign ic = "github" -%}
+            {%- when "info" -%}{%- assign ic = "info" -%}
+            {%- else -%}{%- assign ic = "globe" -%}
+          {%- endcase %}
+          <li><a class="link-btn" href="{{ l.url }}" target="_blank" rel="noopener">{% include icon.html name=ic %}{{ l.label }}<span class="visually-hidden"> for {{ item.title }} (opens in a new tab)</span></a></li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+
+      <figure class="arch" aria-label="Framework architecture">
+        <figcaption class="mono">framework architecture</figcaption>
+        <ol class="arch-layers" role="list">
+          {%- for l in item.layers %}
+          <li class="arch-layer" style="--i: {{ forloop.index0 }}">
+            <span class="arch-name">{{ l.name }}</span>
+            <span class="arch-detail mono">{{ l.detail }}</span>
+          </li>
+          {%- endfor %}
+        </ol>
+        <p class="arch-note mono">specs call workflows → workflows call pages → pages use core</p>
+      </figure>
+    </article>
+    {%- endif %}{% endfor %}
+
+    <div class="filters reveal" role="group" aria-label="Filter projects" data-filters>
+      {%- for f in pr.filters %}
+      <button type="button" class="filter{% if forloop.first %} is-active{% endif %}" data-filter="{{ f.id }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ f.label }}</button>
+      {%- endfor %}
+    </div>
+
+    <ul class="project-grid" role="list" data-project-grid>
+      {%- for item in pr.items %}{% unless item.featured %}
+      <li class="project reveal" data-tags="{{ item.tags | join: ' ' }}">
+        <article class="card project-card">
+          <p class="project-meta mono">
+            <span class="badge{% if item.type == 'Freelance' %} badge-warn{% else %} badge-info{% endif %}">{{ item.type }}</span>
+            <span>{{ item.category }}</span>
+          </p>
+          <h3 class="project-title">{{ item.title }}</h3>
+          <p class="project-org">{{ item.org }}</p>
+          <p class="project-summary">{{ item.summary }}</p>
+          <p class="project-role"><strong>My role:</strong> {{ item.contribution }}</p>
+
+          <div class="project-tests">
+            <p class="mini-label mono">Testing</p>
+            <ul class="chips" role="list">
+              {%- for t in item.testing limit: 5 %}<li class="chip">{{ t }}</li>{% endfor %}
+              {%- if item.testing.size > 5 %}
+              {%- assign extra = item.testing.size | minus: 5 %}
+              <li class="chip chip-more" title="{% for t in item.testing offset: 5 %}{{ t }}{% unless forloop.last %}, {% endunless %}{% endfor %}">+{{ extra }}<span class="visually-hidden"> more: {% for t in item.testing offset: 5 %}{{ t }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span></li>
+              {%- endif %}
+            </ul>
+          </div>
+
+          {%- if item.tools and item.tools.size > 0 %}
+          <p class="project-tools mono"><span class="mini-label">Tools</span> {{ item.tools | join: " · " }}</p>
+          {%- endif %}
+
+          {%- if item.links and item.links.size > 0 %}
+          <ul class="project-links" role="list">
+            {%- for l in item.links %}
+            {%- case l.kind -%}
+              {%- when "app" -%}{%- assign ic = "play" -%}
+              {%- when "repo" -%}{%- assign ic = "github" -%}
+              {%- when "info" -%}{%- assign ic = "info" -%}
+              {%- else -%}{%- assign ic = "globe" -%}
+            {%- endcase %}
+            <li><a class="link-btn" href="{{ l.url }}" target="_blank" rel="noopener">{% include icon.html name=ic %}{{ l.label }}<span class="visually-hidden"> for {{ item.title }} (opens in a new tab)</span></a></li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </article>
+      </li>
+      {%- endunless %}{% endfor %}
+    </ul>
+    <p class="filter-empty mono" data-filter-empty hidden>No projects in this category yet.</p>
+  </div>
+</section>

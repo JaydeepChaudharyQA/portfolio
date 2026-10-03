@@ -1,0 +1,57 @@
+{%- assign p = site.data.profile -%}
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="status-pill reveal">
+        <span class="pass-dot pulse" aria-hidden="true"></span>{{ p.availability }}
+      </p>
+      <h1 id="hero-title" class="hero-title reveal">
+        <span class="hero-hello">Hi, I'm</span>
+        {{ p.name }}
+      </h1>
+      <p class="hero-role reveal">
+        {{ p.role }} <span class="sep" aria-hidden="true">/</span> <span class="accent">{{ p.role_secondary }}</span>
+      </p>
+      <p class="hero-tagline reveal">{{ p.tagline }}</p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#projects">See my work {% include icon.html name="arrow-right" %}</a>
+        <a class="btn btn-ghost" href="{{ p.resume | relative_url }}" target="_blank" rel="noopener">{% include icon.html name="download" %} Download resume</a>
+      </div>
+
+      <ul class="hero-social reveal" role="list">
+        {%- for s in p.social %}
+        <li><a class="icon-btn" href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.name }}">{% include icon.html name=s.icon %}</a></li>
+        {%- endfor %}
+        <li><a class="icon-btn" href="mailto:{{ p.email }}" aria-label="Email {{ p.email }}">{% include icon.html name="mail" %}</a></li>
+        <li class="hero-loc mono">{% include icon.html name="pin" %} {{ p.location }}</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="photo-frame">
+        <picture>
+          <source srcset="{{ p.photo | relative_url }}" type="image/webp">
+          <img src="{{ p.photo_fallback | relative_url }}" alt="Portrait of {{ p.name }}" width="720" height="900" fetchpriority="high">
+        </picture>
+      </div>
+
+      <div class="test-run" data-test-run aria-label="Test run summary">
+        <div class="test-run-bar" aria-hidden="true"><i></i><i></i><i></i><span>terminal</span></div>
+        <pre class="test-run-body"><code><span class="t-cmd"><span class="t-prompt">$</span> {{ p.test_run.command }}</span>{% for c in p.test_run.checks %}<span class="t-line"><span class="t-pass">✓</span> {{ c }}</span>{% endfor %}<span class="t-line t-summary"><span class="t-pass">{{ p.test_run.checks | size }} passed</span> <span class="t-dim">({{ p.test_run.duration }})</span></span></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <dl class="stats reveal">
+      {%- for s in p.stats %}
+      <div class="stat">
+        <dt>{{ s.label }}</dt>
+        <dd><span class="stat-value">{{ s.value }}</span>{% if s.unit %}<span class="stat-unit">{{ s.unit }}</span>{% endif %}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
