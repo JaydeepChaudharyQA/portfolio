@@ -29,17 +29,16 @@ items:
       framework in Playwright + TypeScript.
     contribution: >-
       Automated the import and export cargo scenarios end to end and scaled
-      the automation framework (4-layer architecture, built for 217+
-      scenarios). I also automated the mobile application with Maestro Studio
-      and Appium.
+      the 4-layer automation framework to cover more end-to-end scenarios. I
+      also automated the mobile application with Maestro Studio and Appium.
     layers:
       - { name: Thin test specs,     detail: "readable scenarios, no selectors" }
-      - { name: Business workflows,  detail: "flight · ULD · AWB · delivery order" }
+      - { name: Business workflows,  detail: "import · export · end-to-end flows" }
       - { name: Page objects,        detail: "one class per screen, POM" }
       - { name: Core utilities,      detail: "fixtures · session reuse · test data" }
     metrics:
-      - { value: "10",   label: chained E2E scenarios }
-      - { value: "217+", label: scenarios planned }
+      - { value: "E2E",  label: import & export scenarios }
+      - { value: "4",    label: architecture layers }
       - { value: "2",    label: "platforms: web & mobile" }
     testing: [E2E automation, Regression, Data-driven, Mobile automation]
     tools: [Playwright, TypeScript, Node.js, Maestro, Appium]
