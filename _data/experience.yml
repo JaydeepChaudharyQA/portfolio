@@ -9,10 +9,10 @@
   current: true
   context: GALAXY Cargo Ground Handling System (web & mobile) · team of 10
   highlights:
-    - Built a Playwright (TypeScript) end-to-end suite for GALAXY, a cargo ground handling system used by ground handlers and terminal operators, automating a complete import cargo workflow (flight, ULD, AWB, warehouse delivery order) as 10 chained scenarios.
-    - Designed a four-layer automation architecture (core utilities, page objects, business workflows, thin specs) with fixtures and reusable login sessions, structured to scale to 217+ scenarios.
+    - Built a Playwright (TypeScript) end-to-end suite for GALAXY, a cargo ground handling system used by ground handlers and terminal operators, automating the import and export cargo scenarios (flight, ULD, AWB, warehouse delivery order) end to end.
+    - Scaled the automation framework with a four-layer architecture (core utilities, page objects, business workflows, thin specs), fixtures and reusable login sessions, built for 217+ scenarios.
     - Made automation stable on complex, dynamic UI elements such as autocomplete fields, page refreshes that reset form state, and secure login flows.
-    - Automated the GALAXY Android mobile app with Maestro and Appium (UiAutomator2), reducing flaky tests by switching to stable native locators.
+    - Automated the GALAXY mobile application with Maestro Studio and Appium (UiAutomator2), reducing flaky tests by switching to stable native locators.
   more:
     - Centralised test data in a single TypeScript module that generates valid runtime values (flight numbers, ULD IDs, airway bill numbers) for every run.
     - Created and maintained Testsigma test cases, groups and suites for shipment management, and ran regular smoke suites.

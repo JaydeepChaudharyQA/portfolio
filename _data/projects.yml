@@ -28,10 +28,10 @@ items:
       (Istanbul) and Widerøe (Norway). I built its end-to-end automation
       framework in Playwright + TypeScript.
     contribution: >-
-      Designed the 4-layer framework and automated a complete import cargo
-      workflow (flight → ULD → AWB → warehouse delivery order) as 10 chained
-      scenarios, built to scale to 217+. I also automated the Android app with
-      Maestro and Appium.
+      Automated the import and export cargo scenarios end to end and scaled
+      the automation framework (4-layer architecture, built for 217+
+      scenarios). I also automated the mobile application with Maestro Studio
+      and Appium.
     layers:
       - { name: Thin test specs,     detail: "readable scenarios, no selectors" }
       - { name: Business workflows,  detail: "flight · ULD · AWB · delivery order" }
